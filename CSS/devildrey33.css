@@ -1,0 +1,122 @@
+/*
+   CSS para el Indice de devildrey33.github.io creado por Josep Antoni Bover Comas el 01/02/2019
+
+        Ultima modificación el 01/02/2019
+*/
+
+body {
+    background: #29272C;
+    color :#FFF;
+}
+
+#Cuerpo {
+    display:flex;
+    width:100%;
+}
+
+#Cuerpo > .Entrada {
+    position:relative;
+    flex:1 1 auto;
+    padding:1em;
+    margin:0.5em;
+}
+
+#Cuerpo > .Entrada > img  {
+    display:table;
+    margin:auto;
+    width:100%;
+    height: 100%;
+}
+
+/* Marcas */
+#Cuerpo > .Entrada > .Entrada_MarcoIzquierdo::before, 
+#Cuerpo > .Entrada > .Entrada_MarcoIzquierdo::after, 
+#Cuerpo > .Entrada > .Entrada_MarcoDerecho::before, 
+#Cuerpo > .Entrada > .Entrada_MarcoDerecho::after {
+    transition: 0.4s;
+    content: '';
+    position: absolute;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+#Cuerpo > .Entrada > .Entrada_MarcoIzquierdo, #Cuerpo > .Entrada > .Entrada_MarcoDerecho {   
+    position: absolute;
+    display:inline-block;
+    top: 0px;
+    width: 10px;
+    height: 100%;
+}
+
+#Cuerpo > .Entrada > .Entrada_MarcoIzquierdo {
+    left: -1px;
+}
+
+#Cuerpo > .Entrada > .Entrada_MarcoDerecho {   
+    right: -1px;
+}
+
+#Cuerpo > .Entrada > .Entrada_MarcoIzquierdo::before {
+    top: 0px;
+    left: 0px;
+    border-top: 3px solid rgba(57, 55, 60, 0.3);
+    border-left: 3px solid rgba(57, 55, 60, 0.3);
+}
+
+#Cuerpo > .Entrada > .Entrada_MarcoIzquierdo::after {
+    left: 0px;
+    bottom: -1px;
+    border-bottom: 3px solid rgba(57, 55, 60, 0.3);
+    border-left: 3px solid rgba(57, 55, 60, 0.3);
+}
+
+#Cuerpo > .Entrada > .Entrada_MarcoDerecho::before {
+    bottom: -1px;
+    right: 0px;
+    border-bottom: 3px solid rgba(57, 55, 60, 0.3);
+    border-right: 3px solid rgba(57, 55, 60, 0.3);
+}
+
+#Cuerpo > .Entrada > .Entrada_MarcoDerecho::after {
+    top: 0px;
+    right: 0px;
+    border-top: 3px solid rgba(57, 55, 60, 0.3);
+    border-right: 3px solid rgba(57, 55, 60, 0.3);
+}
+
+/* hover para las marcas */
+#Cuerpo > .Entrada:hover > .Entrada_MarcoIzquierdo::before { 
+    top:0.5em;
+    left:0.5em;
+    border-top:3px solid #666;
+    border-left:3px solid #666;
+}
+#Cuerpo > .Entrada:hover > .Entrada_MarcoIzquierdo::after { 
+    bottom:0.5em;
+    left:0.5em;
+    border-bottom:3px solid #666;
+    border-left:3px solid #666;
+}
+
+#Cuerpo > .Entrada:hover > .Entrada_MarcoDerecho::before { 
+    bottom:0.5em;
+    right:0.5em;
+    border-bottom:3px solid #666;
+    border-right:3px solid #666;
+}
+
+#Cuerpo > .Entrada:hover > .Entrada_MarcoDerecho::after { 
+    top:0.5em;
+    right:0.5em;
+    border-top:3px solid #666;
+    border-right:3px solid #666;
+}
+
+#Cuerpo > .Entrada:hover > .Entrada_MarcoIzquierdo::before, 
+#Cuerpo > .Entrada:hover > .Entrada_MarcoIzquierdo::after,
+#Cuerpo > .Entrada:hover > .Entrada_MarcoDerecho::before, 
+#Cuerpo > .Entrada:hover > .Entrada_MarcoDerecho::after { 
+    width: 3em;
+    height: 3em;
+    border-radius:3px;
+}
