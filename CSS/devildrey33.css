@@ -4,6 +4,8 @@
         Ultima modificación el 01/02/2019
 */
 
+/* vermell : rgb(234, 80, 78);*/
+
 body {
     background: #29272C;
     color :#FFF;
@@ -11,22 +13,28 @@ body {
 
 #Cuerpo {
     display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    justify-content:flex-start;
+    align-items:stretch;    
     width:100%;
 }
 
 #Cuerpo > .Entrada {
     position:relative;
-    flex:1 1 auto;
-    padding:1em;
-    margin:0.5em;
-    filter:grayscale(80%);
-    transition:0.4s ease-out;
+    flex:1 1 800px;
+    padding:1rem;
+    margin:0.5rem;    
+    overflow: hidden;
 }
+
+
+
 
 /* Vista vertical (portrait / vertical) para la gran mayoria de moviles Y tablets  */                             
 @media (orientation:portrait) {
-    #Cuerpo {
-        flex-direction:column;
+    #Cuerpo > .Entrada {
+        flex:1 1 auto;
     }
 }
 /*
@@ -36,16 +44,49 @@ body {
     }
 }*/
 
+/* Imagen de la entrada */
 #Cuerpo > .Entrada > img  {
-    display:table;
+    display:inline;
     margin:auto;
-    width:100%;
-    height: 100%;
+    width:250px;
+    height:200px;
+    float:right;
+    position:absolute;
+    right:2rem;
+    top:2rem;
+    filter:grayscale(100%);
+    transition:0.4s ease-out;
 }
 
-#Cuerpo > .Entrada:hover {
+#Cuerpo > .Entrada:hover > img {
     filter:grayscale(0%);
+    right:3rem;
 }
+
+/* Marco con el titulo y la descripción */
+#Cuerpo > .Entrada > .Entrada_Descripcion {
+    display:inline-table;
+    height:calc(200px - 2rem);
+    width:calc((100% - 4rem) - 300px);
+    padding:2rem;
+    transition:0.4s ease-in-out;
+    color:#FFFFFF;
+}
+
+#Cuerpo > .Entrada:hover > .Entrada_Descripcion {
+    padding-left:3.5rem;
+}
+
+/* Título de la entrada */
+#Cuerpo > .Entrada > .Entrada_Descripcion > h1 {
+    color:#FFFFFF;
+    transition:0.4s ease-out;
+}
+
+#Cuerpo > .Entrada:hover > .Entrada_Descripcion > h1 {
+    color:rgb(234, 80, 78);
+}
+
 
 /* Marcas */
 #Cuerpo > .Entrada > .Entrada_MarcoIzquierdo::before, 
@@ -55,8 +96,8 @@ body {
     transition: 0.4s;
     content: '';
     position: absolute;
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 #Cuerpo > .Entrada > .Entrada_MarcoIzquierdo, #Cuerpo > .Entrada > .Entrada_MarcoDerecho {   
@@ -105,28 +146,28 @@ body {
 
 /* hover para las marcas */
 #Cuerpo > .Entrada:hover > .Entrada_MarcoIzquierdo::before { 
-    top:0.5em;
-    left:0.5em;
+    top:0.5rem;
+    left:0.5rem;
     border-top:3px solid #666;
     border-left:3px solid #666;
 }
 #Cuerpo > .Entrada:hover > .Entrada_MarcoIzquierdo::after { 
-    bottom:0.5em;
-    left:0.5em;
+    bottom:0.5rem;
+    left:0.5rem;
     border-bottom:3px solid #666;
     border-left:3px solid #666;
 }
 
 #Cuerpo > .Entrada:hover > .Entrada_MarcoDerecho::before { 
-    bottom:0.5em;
-    right:0.5em;
+    bottom:0.5rem;
+    right:0.5rem;
     border-bottom:3px solid #666;
     border-right:3px solid #666;
 }
 
 #Cuerpo > .Entrada:hover > .Entrada_MarcoDerecho::after { 
-    top:0.5em;
-    right:0.5em;
+    top:0.5rem;
+    right:0.5rem;
     border-top:3px solid #666;
     border-right:3px solid #666;
 }
@@ -135,7 +176,7 @@ body {
 #Cuerpo > .Entrada:hover > .Entrada_MarcoIzquierdo::after,
 #Cuerpo > .Entrada:hover > .Entrada_MarcoDerecho::before, 
 #Cuerpo > .Entrada:hover > .Entrada_MarcoDerecho::after { 
-    width: 3em;
-    height: 3em;
+    width: 3rem;
+    height: 3rem;
     border-radius:3px;
 }
