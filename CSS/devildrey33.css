@@ -1,15 +1,55 @@
 /*
    CSS para el Indice de devildrey33.github.io creado por Josep Antoni Bover Comas el 01/02/2019
 
-        Ultima modificación el 01/02/2019
+        Ultima modificación el 08/03/2019
 */
 
+@charset "UTF-8"; /* Especificar el charset SOLO en este archivo, que es el primero a minificar */
+
+/* Fuente del logo vertical del menú de la izquierda */
+@import url('https://fonts.googleapis.com/css?family=Architects+Daughter|Orbitron');
+/* Fuente para las etiquetas h1, h2, h3, h4, h5*/
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
 /* vermell : rgb(234, 80, 78);*/
+
+html {
+    font-size: 100%; /* Conversión para que el rem valga 10 pixeles por defecto en la web */
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;    
+}
+ 
+
+/* 2% del ancho para el tamaño de fuente */
+@media screen and (orientation: landscape) and (min-resolution: 1.2dppx) {
+    html { font-size: 2vw; } /* viewport width */
+}
+
+/* 2% del alto para el tamaño de fuente */
+@media screen and (orientation: portrait)  {
+    html { font-size: 2vh; }  /* viewport height */
+}
+
 
 body {
     background: #29272C;
     color :#FFF;
+    margin:0;
 }
+
+body[cargando="true"]::after {
+    content:'';
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgb(41, 39, 44);
+    opacity:0.925;
+    z-index:99;
+}
+
+
+h1, h2, h3, h4, h5 { font-family : 'Karla', sans-serif; }
 
 #Cuerpo {
     display:flex;
@@ -17,14 +57,21 @@ body {
     flex-direction:row;
     justify-content:flex-start;
     align-items:stretch;    
-    width:100%;
+    width:calc(100% - 3.6rem);
+    transition:0.4s;
+    opacity:0.0;
+    margin-left:3.6rem;
+}
+
+#Cuerpo[visible="true"] {
+    opacity:1.0;
 }
 
 #Cuerpo > .Entrada {
     position:relative;
     flex:1 1 800px;
-    padding:1rem;
-    margin:0.5rem;    
+    padding:0 1rem;
+    /*margin:0.5rem;    */
     overflow: hidden;
 }
 
@@ -45,7 +92,7 @@ body {
 }*/
 
 /* Imagen de la entrada */
-#Cuerpo > .Entrada > img  {
+#Cuerpo > .Entrada > img, #Cuerpo > .Entrada > .FiltroImg  {
     display:inline;
     margin:auto;
     width:250px;
@@ -54,37 +101,75 @@ body {
     position:absolute;
     right:2rem;
     top:2rem;
-    filter:grayscale(100%);
     transition:0.4s ease-out;
+    border-radius:1rem;
+}
+
+#Cuerpo > .Entrada > img {
+    z-index:9;
+}
+
+#Cuerpo > .Entrada > .FiltroImg {
+    opacity:1;
+    background-color:rgba(0, 0, 0, 0.6);
+    z-index:10;
+}
+
+#Cuerpo > .Entrada:hover > .FiltroImg {
+    right:3rem;
+    opacity:0.0;
 }
 
 #Cuerpo > .Entrada:hover > img {
-    filter:grayscale(0%);
     right:3rem;
 }
 
 /* Marco con el titulo y la descripción */
 #Cuerpo > .Entrada > .Entrada_Descripcion {
+    position:relative;
     display:inline-table;
-    height:calc(200px - 2rem);
+    height:200px;
     width:calc((100% - 4rem) - 300px);
     padding:2rem;
     transition:0.4s ease-in-out;
     color:#FFFFFF;
 }
 
-#Cuerpo > .Entrada:hover > .Entrada_Descripcion {
+/*#Cuerpo > .Entrada:hover > .Entrada_Descripcion {
     padding-left:3.5rem;
-}
+}*/
 
 /* Título de la entrada */
 #Cuerpo > .Entrada > .Entrada_Descripcion > h1 {
     color:#FFFFFF;
     transition:0.4s ease-out;
+    margin:0;
 }
 
 #Cuerpo > .Entrada:hover > .Entrada_Descripcion > h1 {
     color:rgb(234, 80, 78);
+    padding-left:1rem;
+}
+
+/* Descripción de la entrada */
+#Cuerpo > .Entrada > .Entrada_Descripcion > p {    
+    position:relative;
+    transition:0.4s ease-out;    
+    width:calc(100% - 1rem);
+    margin:0.75rem;
+    color:#CCC;
+}
+
+#Cuerpo > .Entrada > .Entrada_Descripcion > table {    
+    position:relative;
+    transition:0.4s ease-out;    
+    margin:0.75rem;    
+    color:#CCC;
+}
+
+#Cuerpo > .Entrada:hover > .Entrada_Descripcion > p, #Cuerpo > .Entrada:hover > .Entrada_Descripcion > table {    
+    margin-left:2rem;
+    color:#FFF;
 }
 
 
@@ -179,4 +264,124 @@ body {
     width: 3rem;
     height: 3rem;
     border-radius:3px;
+}
+
+
+
+
+/* BARRA IZQUIERDA Y LOGO */
+#devildrey33_BarraIzquierda {
+    position:fixed;
+    top:0;
+    left:0rem;
+    width:3.6rem;
+    height:100%;
+    border-right:1px solid #353338;
+    background: #252328;
+    animation:Ani_BarraIzquierda 0.5s ease 0s 1 normal;
+    z-index:100;
+}
+
+@keyframes Ani_BarraIzquierda {
+    0%   { left:-3.6rem; };
+    100% { left:0rem; };
+}
+
+body #devildrey33_Logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size:1.2rem;
+    position:fixed;
+    bottom:5.5rem;
+    left:-3.8rem;
+    transition:0.4s ease-in-out;
+    transform:rotateZ(-90deg);
+    z-index:200;
+    font-size:1.2rem;
+    animation:Ani_BarraIzquierdaLogo 0.5s ease 0s 1 normal;
+    width:11rem;
+}
+
+@keyframes Ani_BarraIzquierdaLogo {
+    0%   { left:-7.2rem; };
+    100% { left:-3.8rem; };
+}
+
+
+body[cargando="true"] #devildrey33_Logo {
+    transform:rotateZ(0deg);
+    bottom:calc(50% - 2rem); 
+    left:calc(50% - 50rem); 
+    font-size:2.4rem;
+    width:100rem;
+}
+
+
+
+body[cargando="true"] #devildrey33_Logo > div {
+    animation:Ani_LogoCargando 7s ease-in-out 0s infinite;    
+}
+
+
+/*
+@keyframes Ani_LogoCargando2 {
+    0%   { top:0rem; }
+    30%  { top:-0.6rem; }
+    60%  { top:0rem; }
+}
+
+
+@keyframes Ani_LogoCargando {
+    0%   { padding-left:0.6rem; }
+    50%  { padding-left:0rem; }
+    100% { padding-left:0.6rem; }
+}*/
+
+body #devildrey33_Logo > div {
+    position:relative;
+    display:inline-block;
+    padding-left:0;
+}
+
+body[cargando="true"] #devildrey33_Logo > div {
+    opacity:0.0;
+}
+
+/* el 33 en rojo */
+/*#devildrey33_Logo > div:nth-child(11), #devildrey33_Logo > div:nth-child(12) {  color:rgb(234, 80, 78);  }*/
+
+    
+body #devildrey33_Logo > div:nth-child(1)  {    animation-delay: 0.2s;     }
+body #devildrey33_Logo > div:nth-child(2)  {    animation-delay: 0.4s;     }
+body #devildrey33_Logo > div:nth-child(3)  {    animation-delay: 0.6s;     }
+body #devildrey33_Logo > div:nth-child(4)  {    animation-delay: 0.8s;     }
+body #devildrey33_Logo > div:nth-child(5)  {    animation-delay: 1.0s;     }
+body #devildrey33_Logo > div:nth-child(6)  {    animation-delay: 1.2s;     }
+body #devildrey33_Logo > div:nth-child(7)  {    animation-delay: 1.4s;     }
+body #devildrey33_Logo > div:nth-child(8)  {    animation-delay: 1.6s;     }
+body #devildrey33_Logo > div:nth-child(9)  {    animation-delay: 1.8s;     }
+body #devildrey33_Logo > div:nth-child(10) {    animation-delay: 2.0s;     }
+body #devildrey33_Logo > div:nth-child(11) {    animation-delay: 2.2s;     color:rgb(234, 80, 78);     }
+body #devildrey33_Logo > div:nth-child(12) {    animation-delay: 2.4s;     color:rgb(234, 80, 78);     }
+
+@keyframes Ani_LogoCargando {
+    0% {
+        right:-100%;
+        opacity:0;
+        transform:rotate(90deg);
+    }
+    20% {
+        right:-59%; 
+        transform:rotate(0deg);
+        opacity:1;
+    }
+    50% {
+        right:-41%; 
+        transform:rotate(0deg); 
+        opacity:1;
+    }
+    80% {
+        right:0; 
+        transform:rotate(-180deg);
+        opacity:0;
+    }
 }
