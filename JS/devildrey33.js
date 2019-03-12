@@ -19,7 +19,9 @@ var devildrey33_Base = function() {
         
         document.getElementById("Cuerpo").setAttribute("visible", "true");
 //        document.getElementById("devildrey33_Logo").setAttribute("cargando", "false");
-        //document.body.setAttribute("cargando", "false");
+        
+        // s'ha de fer això quan s'acabi de carregar tot el ajax
+        setTimeout(function () { document.body.setAttribute("cargando", "false")} , 12000);
     };
     
     // Función que crea la barra derecha y la añade al body
