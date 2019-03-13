@@ -3,7 +3,11 @@ var devildrey33_Base = function() {
     // Evento OnLoad 
     window.addEventListener('load', function() { this.Iniciar(); }.bind(this));
     // Array de paths para contar los archivos JavaScript y CSS dinámicos
-    this.ScriptDinamico     = []; // { "URL" : URL, "Estado" : "cargando/cargado/error", "FuncionTerminado" : FuncionTerminado, "FuncionError" : FuncionError }
+    this.ScriptDinamico     = [ // { "URL" : URL, "Estado" : "cargando/cargado/error", "FuncionTerminado" : FuncionTerminado, "FuncionError" : FuncionError }
+        { "cargado" : "Estado", "URL" : "/CSS/devildrey33.css"                                              }, 
+        { "cargado" : "Estado", "URL" : "/JS/devildrey33.js"                                                }, 
+        { "cargado" : "Estado", "URL" : "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" }
+    ]; 
     // Variable para almacenar la función que se utilizará al finalizar la carga dinámica de un archivo CSS 
     this.FuncionCargarCSS   = function() { };
     // Variable para almacenar la función que se utilizará al finalizar la carga dinámica de un archivo JavaScript
@@ -13,7 +17,7 @@ var devildrey33_Base = function() {
         console.log("Base.Iniciar()");
         
         this.CargarJS("/ObjetoCanvas/JS/ObjetoCanvas.js", function() { },  function() { });
-        this.CargarJS("/ObjetoCanvas/JS/ObjetoCanvas.js", function() { },  function() { });
+//        this.CargarJS("/ObjetoCanvas/JS/ObjetoCanvas.js", function() { },  function() { });
         
         this.GenerarHTMLBase();
         
@@ -190,6 +194,120 @@ var devildrey33_Base = function() {
         );
     };    
     
+    
+    this.GenerarIndice = function() {
+        var Codigo = "<div class='devildrey33_Indice'>";
+        for (var i = 0; i < Opciones.Entradas.length; i++) {
+            Codigo += "<a class='Entrada' href='" + Opciones.Entradas[i].URL + "'>"     +
+                    "<div class='Entrada_MarcoIzquierdo'></div>"                        +
+                    "<div class='Entrada_MarcoDerecho'></div>"                          + 
+                    "<div class='Entrada_Contenido'>"                                   +
+                        "<div class='Entrada_Descripcion'>"                             +
+                            "<h1>" + Opciones.Entradas[i].Nombre + "</h1>"              +
+                            "<p>" + Opciones.Entradas[i].Descripcion  + "</p>"          +
+                            "<table>"                                                   +
+                                "<tr>"                                                  +
+                                    "<td>Categorías</td>"                               +
+                                    "<td>:</td>"                                        +
+                                    "<td>" + Opciones.Entradas[i].Categorias  + "</td>" +
+                                "</tr>"                                                 +
+                                "<tr>"                                                  +
+                                    "<td>Fecha</td>"                                    +
+                                    "<td>:</td>"                                        +
+                                    "<td>" + Opciones.Entradas[i].Fecha  +"</td>"       +
+                                "</tr>"                                                 +
+                            "</table>"                                                  +
+                        "</div>"                                                        +
+                        "<div class='Entrada_Imagen'>"                                  +
+                            "<img src='" + Opciones.Entradas[i].Imagen + "' />"         +
+                        "</div>"                                                        +
+                    "</div>"                                                            +
+                "</a>";
+        }
+        Codigo += "</div>";
+        
+        document.getElementById("Cuerpo").innerHTML = Codigo;
+    };
 };
 
 var Base = new devildrey33_Base;
+
+
+/* Base de datos para las opciones del CMS (Es lo que hay...) 
+   Esta variable es BÁSICA y es tontería poner-la en otro archivo... */
+var Opciones = {
+    // Entradas del indice 
+    "Entradas" : [
+        {
+            "Nombre"        : "Dominó 3D",
+            "URL"           : "/Domino/domino.html",
+            "Descripcion"   : "Juego de dominó en 3D, con las reglas básicas de un 2 contra 2 por parejas, <b>solo para un jugador</b>.",
+            "Categorias"    : "<b>JavaScript</b>, y <b>Three.js</b>.",
+            "Fecha"         : "08/03/2019",
+            "Imagen"        : "/Graficos/250x200_Domino.png"
+        },
+        {
+            "Nombre"        : "Experimento : CyberParasit",
+            "URL"           : "/CyberParasit/",
+            "Descripcion"   : "Presentación / animación en 3D que consiste en varios cubos siguiendo el ritmo de una canción.",
+            "Categorias"    : "<b>JavaScript</b>, <b>Three.js</b>, <b>JSON</b>, y <b>WebAudio</b>",
+            "Fecha"         : "08/03/2019",
+            "Imagen"        : "/Graficos/250x200_CyberParasit.png"
+        },
+        {
+            "Nombre"        : "Experimento : EspectroAudible",
+            "URL"           : "/EspectroAudible/",
+            "Descripcion"   : "Un analizador de espectro en 3D.",
+            "Categorias"    : "<b>JavaScript</b>, <b>Three.js</b>, y <b>WebAudio</b>.",
+            "Fecha"         : "08/03/2019",  
+            "Imagen"        : "/Graficos/250x200_EspectroAudible.png"
+        },
+        {   
+            "Nombre"        : "Experimento : Hex Tunnel",
+            "URL"           : "/HexTunnel/",
+            "Descripcion"   : "Animación de un tunel infinito, compuesto por varios bloques 3D en los que se van mostrando valores hexadecimales aleatórios.",
+            "Categorias"    : "<b>JavaScript</b>, y <b>Three.js</b>.",
+            "Fecha"         : "08/03/2019",
+            "Imagen"        : "/Graficos/250x200_HexTunnel.png"
+        },
+        {
+            "Nombre"        : "Experimento : Sinusoidal",
+            "URL"           : "/Sinusoidal/",
+            "Descripcion"   : "Animación de una onda generada aleatóriamente utilizando un número indeterminado de circulos, cada uno con un diámetro aleatório.",
+            "Categorias"    : "<b>JavaScript</b>, y <b>Canvas 2D</b>",
+            "Fecha"         : "08/03/2019",
+            "Imagen"        : "/Graficos/250x200_Sinusoidal.png"            
+        },
+        {
+            "Nombre"        : "Experimento : Esfera vertex shader",
+            "URL"           : "/EsferaVertexShader/",
+            "Descripcion"   : "Ejemplo básico para mover todos los vertices de la esfera utilizando un shadder basado en p5noise",
+            "Categorias"    : "<b>JavaScript</b>, y <b>Three.js</b>",
+            "Fecha"         : "08/03/2019",
+            "Imagen"        : "/Graficos/250x200_EsferaVShader.png"      
+        },
+        {
+            "Nombre"        : "Adiestramiento de cubos",
+            "URL"           : "/AdiestramientoCubos/",
+            "Descripcion"   : "Mi primera animación en 3D utilizando Three.js",
+            "Categorias"    : "<b>JavaScript</b>, y <b>Three.js</b>",
+            "Fecha"         : "08/03/2019",
+            "Imagen"        : "/Graficos/250x200_Adiestramiento.png"            
+        }
+/*        {
+            "Nombre"        : "",
+            "URL"           : "",
+            "Descripcion"   : "",
+            "Categorias"    : "",
+            "Fecha"         : "08/03/2019",
+            "Imagen"        : ""            
+        }*/
+    ],
+    
+    // Proyectos para ver en el laboratório de pruebas
+    "Proyectos" : [
+        
+    ]
+    
+    
+};

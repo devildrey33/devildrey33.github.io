@@ -20,9 +20,8 @@ and open the template in the editor.
 
 .devildrey33_Indice > .Entrada {
     position:relative;
-    flex:1 1 40%;
+    flex:1 1 800px;
     padding:0 1rem;
-    /*margin:0.5rem;    */
     overflow: hidden;
     z-index:3;
     text-decoration:none;
@@ -31,7 +30,6 @@ and open the template in the editor.
 
 .devildrey33_Indice > .Entrada  > .Entrada_Contenido {
     display:flex;
-/*    flex-wrap:wrap;*/
     flex-direction:row;
     justify-content:flex-start;
     align-items:stretch;            
@@ -47,10 +45,10 @@ and open the template in the editor.
     }
     
     .devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Imagen {
-        padding:0 !important;
+        padding:0 0 2rem 0 !important;
     }
     
-    .devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Descripcion {
+    .devildrey33_Indice > .Entrada > .Entrada_Contenido > .Entrada_Descripcion {
         padding: 2rem 2rem 0.75rem 1vw !important;
     }    
     
@@ -63,18 +61,18 @@ and open the template in the editor.
 /*    .devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Imagen::before { 
     }    */
 }
-/*
-@media (orientation:landscape) {
-    #Cuerpo {
-        flex-direction:row;
+
+@media (orientation:landscape) and (max-width: 1700px) and (max-resolution: 1dppx) {
+    .devildrey33_Indice > .Entrada {
+        max-width:50%
     }
-}*/
+}
 
 
 /* Imagen de la entrada */
 .devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Imagen {
     flex: 1 1 25%;
-    padding:2rem 2rem 2rem 0;
+    padding:2rem 2rem 2rem 0.2rem;
     position:relative;
     transition:0.4s ease-out;
     max-width:250px;
@@ -114,7 +112,7 @@ and open the template in the editor.
 /*    display:inline-table;*/
 /*    height:200px;
     width:calc((100% - 4rem) - 300px);*/
-    padding:2rem 2rem 2rem 1vw;
+    padding:2rem 1rem 2rem 1vw;
     transition:0.4s ease-in-out;
     color:#FFFFFF;
 }
@@ -125,10 +123,13 @@ and open the template in the editor.
     color:#FFFFFF;
     transition:0.4s ease-out;
     margin:0;
+    padding-right:1rem; /* De esta forma sabre si el titulo sobresale al hacer hover (antes de hacer el hover)*/
+    left-right:0rem
 }
 
 .devildrey33_Indice > .Entrada:hover > .Entrada_Contenido > .Entrada_Descripcion > h1 {
     color:rgb(234, 80, 78);
+    padding-right:0rem; /* De esta forma sabre si el titulo sobresale al hacer hover (antes de hacer el hover)*/
     padding-left:1rem;
 }
 
@@ -137,7 +138,8 @@ and open the template in the editor.
     position:relative;
     transition:0.4s ease-out;    
     width:calc(100% - 1rem);
-    margin:0.75rem;
+    margin-left:0.75rem;
+    margin-right:1.25rem;
     color:#CCC;
 }
 
@@ -150,6 +152,7 @@ and open the template in the editor.
 
 .devildrey33_Indice > .Entrada:hover > .Entrada_Contenido > .Entrada_Descripcion > p, .devildrey33_Indice > .Entrada:hover > .Entrada_Contenido > .Entrada_Descripcion > table {    
     margin-left:2rem;
+    margin-right:0rem;
     color:#FFF;
 }
 
