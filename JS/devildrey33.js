@@ -21,7 +21,8 @@ var devildrey33_Base = function() {
 //        document.getElementById("devildrey33_Logo").setAttribute("cargando", "false");
         
         // s'ha de fer això quan s'acabi de carregar tot el ajax
-        setTimeout(function () { document.body.setAttribute("cargando", "false")} , 12000);
+        
+        setTimeout(function () { document.body.setAttribute("cargando", "false")} , 13000);
     };
     
     // Función que crea la barra derecha y la añade al body
@@ -31,7 +32,6 @@ var devildrey33_Base = function() {
         document.body.appendChild(Barra);
         var Logo =  document.createElement("div");
         Logo.setAttribute("id", "devildrey33_Logo");
-        document.body.setAttribute("cargando", "true");
         Logo.innerHTML = "<div>D</div>" +
                          "<div>E</div>" +
                          "<div>V</div>" +
@@ -45,6 +45,14 @@ var devildrey33_Base = function() {
                          "<div>3</div>" +
                          "<div>3</div>";
         document.body.appendChild(Logo);
+        
+        var LogoC =  document.createElement("div");
+        LogoC.setAttribute("id", "devildrey33_LogoCargando");
+        LogoC.innerHTML = Logo.innerHTML;
+        document.body.appendChild(LogoC);
+
+        document.body.setAttribute("cargando", "true");
+        
     };
     
     // Función que obtiene un archivo del servidor 

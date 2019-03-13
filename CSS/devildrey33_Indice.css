@@ -1,0 +1,248 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13-mar-2019, 14:03:24
+    Author     : devildrey33
+*/
+
+
+/* INDICE */
+.devildrey33_Indice {
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    justify-content:flex-start;
+    align-items:stretch;        
+}
+
+.devildrey33_Indice > .Entrada {
+    position:relative;
+    flex:1 1 40%;
+    padding:0 1rem;
+    /*margin:0.5rem;    */
+    overflow: hidden;
+    z-index:3;
+    text-decoration:none;
+}
+
+
+.devildrey33_Indice > .Entrada  > .Entrada_Contenido {
+    display:flex;
+/*    flex-wrap:wrap;*/
+    flex-direction:row;
+    justify-content:flex-start;
+    align-items:stretch;            
+}
+
+/* Vista vertical (portrait / vertical) para la gran mayoria de moviles Y tablets  */                             
+@media (orientation:portrait) {
+    .devildrey33_Indice > .Entrada {
+        flex:1 1 auto;
+    }
+    .devildrey33_Indice > .Entrada > .Entrada_Contenido {
+        flex-direction:column;
+    }
+    
+    .devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Imagen {
+        padding:0 !important;
+    }
+    
+    .devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Descripcion {
+        padding: 2rem 2rem 0.75rem 1vw !important;
+    }    
+    
+    .devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Imagen > img, .devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Imagen::before { 
+        width:500px !important;
+        height:400px !important;
+        left:0.75rem;
+    }
+    
+/*    .devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Imagen::before { 
+    }    */
+}
+/*
+@media (orientation:landscape) {
+    #Cuerpo {
+        flex-direction:row;
+    }
+}*/
+
+
+/* Imagen de la entrada */
+.devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Imagen {
+    flex: 1 1 25%;
+    padding:2rem 2rem 2rem 0;
+    position:relative;
+    transition:0.4s ease-out;
+    max-width:250px;
+}
+
+.devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Imagen > img {
+    border-radius:1rem;
+    z-index:9;
+    position:relative;
+}
+
+.devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Imagen::before {
+    border-radius:1rem;
+    position:absolute;
+    content:'';
+    width:250px;
+    height:200px;
+    opacity:1;
+    background-color:rgba(0, 0, 0, 0.6);
+    z-index:20;
+    transition:0.4s;
+}
+
+.devildrey33_Indice > .Entrada:hover > .Entrada_Contenido > .Entrada_Imagen::before {
+/*    right:3rem;*/
+    opacity:0.0;
+}
+
+.devildrey33_Indice > .Entrada:hover > .Entrada_Contenido > Entrada_Imagen > img {
+/*    right:3rem;*/
+}
+
+/* Marco con el titulo y la descripción */
+.devildrey33_Indice > .Entrada > .Entrada_Contenido > .Entrada_Descripcion {
+    position:relative;
+    flex: 1 1 75%;
+/*    display:inline-table;*/
+/*    height:200px;
+    width:calc((100% - 4rem) - 300px);*/
+    padding:2rem 2rem 2rem 1vw;
+    transition:0.4s ease-in-out;
+    color:#FFFFFF;
+}
+
+
+/* Título de la entrada */
+.devildrey33_Indice > .Entrada > .Entrada_Contenido > .Entrada_Descripcion > h1 {
+    color:#FFFFFF;
+    transition:0.4s ease-out;
+    margin:0;
+}
+
+.devildrey33_Indice > .Entrada:hover > .Entrada_Contenido > .Entrada_Descripcion > h1 {
+    color:rgb(234, 80, 78);
+    padding-left:1rem;
+}
+
+/* Descripción de la entrada */
+.devildrey33_Indice > .Entrada > .Entrada_Contenido >.Entrada_Descripcion > p {    
+    position:relative;
+    transition:0.4s ease-out;    
+    width:calc(100% - 1rem);
+    margin:0.75rem;
+    color:#CCC;
+}
+
+.devildrey33_Indice > .Entrada > .Entrada_Contenido >.Entrada_Descripcion > table {    
+    position:relative;
+    transition:0.4s ease-out;    
+    margin:0.75rem;    
+    color:#CCC;
+}
+
+.devildrey33_Indice > .Entrada:hover > .Entrada_Contenido > .Entrada_Descripcion > p, .devildrey33_Indice > .Entrada:hover > .Entrada_Contenido > .Entrada_Descripcion > table {    
+    margin-left:2rem;
+    color:#FFF;
+}
+
+
+/* Marcas */
+.devildrey33_Indice > .Entrada > .Entrada_MarcoIzquierdo::before, 
+.devildrey33_Indice > .Entrada > .Entrada_MarcoIzquierdo::after, 
+.devildrey33_Indice > .Entrada > .Entrada_MarcoDerecho::before, 
+.devildrey33_Indice > .Entrada > .Entrada_MarcoDerecho::after {
+    transition: 0.4s;
+    content: '';
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+#Cuerpo> .devildrey33_Indice > .Entrada > .Entrada_MarcoIzquierdo, .devildrey33_Indice > .Entrada > .Entrada_MarcoDerecho {   
+    position: absolute;
+    display:inline-block;
+    top: 0px;
+    width: 10px;
+    height: 100%;
+}
+
+.devildrey33_Indice > .Entrada > .Entrada_MarcoIzquierdo {
+    left: -1px;
+}
+
+.devildrey33_Indice > .Entrada > .Entrada_MarcoDerecho {   
+    right: -1px;
+}
+
+.devildrey33_Indice > .Entrada > .Entrada_MarcoIzquierdo::before {
+    top: 0px;
+    left: 0px;
+    border-top: 3px solid rgba(57, 55, 60, 0.3);
+    border-left: 3px solid rgba(57, 55, 60, 0.3);
+}
+
+.devildrey33_Indice > .Entrada > .Entrada_MarcoIzquierdo::after {
+    left: 0px;
+    bottom: -1px;
+    border-bottom: 3px solid rgba(57, 55, 60, 0.3);
+    border-left: 3px solid rgba(57, 55, 60, 0.3);
+}
+
+.devildrey33_Indice > .Entrada > .Entrada_MarcoDerecho::before {
+    bottom: -1px;
+    right: 0px;
+    border-bottom: 3px solid rgba(57, 55, 60, 0.3);
+    border-right: 3px solid rgba(57, 55, 60, 0.3);
+}
+
+.devildrey33_Indice > .Entrada > .Entrada_MarcoDerecho::after {
+    top: 0px;
+    right: 0px;
+    border-top: 3px solid rgba(57, 55, 60, 0.3);
+    border-right: 3px solid rgba(57, 55, 60, 0.3);
+}
+
+/* hover para las marcas */
+.devildrey33_Indice > .Entrada:hover > .Entrada_MarcoIzquierdo::before { 
+    top:0.5rem;
+    left:0.5rem;
+    border-top:3px solid #666;
+    border-left:3px solid #666;
+}
+.devildrey33_Indice > .Entrada:hover > .Entrada_MarcoIzquierdo::after { 
+    bottom:0.5rem;
+    left:0.5rem;
+    border-bottom:3px solid #666;
+    border-left:3px solid #666;
+}
+
+.devildrey33_Indice > .Entrada:hover > .Entrada_MarcoDerecho::before { 
+    bottom:0.5rem;
+    right:0.5rem;
+    border-bottom:3px solid #666;
+    border-right:3px solid #666;
+}
+
+.devildrey33_Indice > .Entrada:hover > .Entrada_MarcoDerecho::after { 
+    top:0.5rem;
+    right:0.5rem;
+    border-top:3px solid #666;
+    border-right:3px solid #666;
+}
+
+.devildrey33_Indice > .Entrada:hover > .Entrada_MarcoIzquierdo::before, 
+.devildrey33_Indice > .Entrada:hover > .Entrada_MarcoIzquierdo::after,
+.devildrey33_Indice > .Entrada:hover > .Entrada_MarcoDerecho::before, 
+.devildrey33_Indice > .Entrada:hover > .Entrada_MarcoDerecho::after { 
+    width: 3rem;
+    height: 3rem;
+    border-radius:3px;
+}

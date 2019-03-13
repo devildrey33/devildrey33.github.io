@@ -1,0 +1,166 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13-mar-2019, 14:04:44
+    Author     : devildrey33
+*/
+
+
+/* BARRA IZQUIERDA Y LOGO */
+#devildrey33_BarraIzquierda {
+    position:fixed;
+    top:0;
+    left:0rem;
+    width:3.6rem;
+    height:100%;
+    border-right:1px solid #353338;
+    background: #252328;
+    animation:Ani_BarraIzquierda 0.5s ease 0s 1 normal;
+    z-index:100;
+}
+
+@keyframes Ani_BarraIzquierda {
+    0%   { left:-3.6rem; };
+    100% { left:0rem; };
+}
+
+/* Logo vertical de la barra izquierda */
+body #devildrey33_Logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size:1.2rem;
+    position:fixed;
+    bottom:3.5rem;
+    left:2.7rem;
+    transition:font-size .1s ease-in-out, bottom .4s ease-in-out, left .4s ease-in-out, transform .4s ease-in-out, width .4s ease-in-out, height .4s ease-in-out;
+    transform:rotateZ(-90deg);
+    transform-origin: bottom left;
+    z-index:200;
+    animation:Ani_BarraIzquierdaLogo 0.5s ease 0s 1 normal;
+    animation-fill-mode:both;
+    width:calc(11rem - 1px);
+    height:calc(1.8rem - 1px);
+    transition:0.4s;
+    opacity:1.0;
+}
+
+@keyframes Ani_BarraIzquierdaLogo {
+    0%   { left:-7.2rem; };
+    100% { left:-3.8rem; };
+}
+
+
+body[cargando="true"] #devildrey33_Logo {
+    opacity:1.0;
+}
+/* Letras del logo vertical */
+body #devildrey33_Logo > div {    
+    position:relative;
+    display:inline-block;
+    opacity:1.0;
+    transition:0.4s;
+}
+
+body[cargando="true"] #devildrey33_Logo > div {    
+    opacity:0.0;
+    animation:Ani_ResaltarLetra 6s ease-in-out 0s infinite;    
+}
+
+
+
+body #devildrey33_LogoCargando {    
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:1;
+    font-family: 'Orbitron', sans-serif;
+    font-size:2.4rem;
+}
+
+/* Logo para la animación del loading */
+body[cargando="true"] #devildrey33_LogoCargando {
+    width:calc(100vw - 1px);
+    height:calc(100vh - 1px);
+    z-index:100;
+}
+
+
+/* 2% del alto para el tamaño de fuente */
+/*@media screen and (orientation: portrait)  {
+    body[cargando="true"] #devildrey33_Logo > div {
+        animation:Ani_LogoCargandoPortrait 6s ease-in-out 0s infinite;    
+    }
+}
+*/
+body #devildrey33_LogoCargando > div {    
+    position:relative;
+    display:inline-block;
+    opacity:0.0;
+    transition:0.4s;
+    top:0;
+    left:-100vw;
+    padding-top:50vh;
+}
+
+body[cargando="true"] #devildrey33_LogoCargando > div {
+    animation:Ani_LogoCargando 6s ease-in-out 0s infinite;    
+}
+
+/* el 33 en rojo */
+/*#devildrey33_Logo > div:nth-child(11), #devildrey33_Logo > div:nth-child(12) {  color:rgb(234, 80, 78);  }*/
+
+    
+body #devildrey33_Logo > div:nth-child(1) , body #devildrey33_LogoCargando > div:nth-child(1)  {    animation-delay: 0.2s;     }
+body #devildrey33_Logo > div:nth-child(2) , body #devildrey33_LogoCargando > div:nth-child(2)  {    animation-delay: 0.4s;     }
+body #devildrey33_Logo > div:nth-child(3) , body #devildrey33_LogoCargando > div:nth-child(3)  {    animation-delay: 0.6s;     }
+body #devildrey33_Logo > div:nth-child(4) , body #devildrey33_LogoCargando > div:nth-child(4)  {    animation-delay: 0.8s;     }
+body #devildrey33_Logo > div:nth-child(5) , body #devildrey33_LogoCargando > div:nth-child(5)  {    animation-delay: 1.0s;     }
+body #devildrey33_Logo > div:nth-child(6) , body #devildrey33_LogoCargando > div:nth-child(6)  {    animation-delay: 1.2s;     }
+body #devildrey33_Logo > div:nth-child(7) , body #devildrey33_LogoCargando > div:nth-child(7)  {    animation-delay: 1.4s;     }
+body #devildrey33_Logo > div:nth-child(8) , body #devildrey33_LogoCargando > div:nth-child(8)  {    animation-delay: 1.6s;     }
+body #devildrey33_Logo > div:nth-child(9) , body #devildrey33_LogoCargando > div:nth-child(9)  {    animation-delay: 1.8s;     }
+body #devildrey33_Logo > div:nth-child(10), body #devildrey33_LogoCargando > div:nth-child(10) {    animation-delay: 2.0s;     }
+body #devildrey33_Logo > div:nth-child(11), body #devildrey33_LogoCargando > div:nth-child(11) {    animation-delay: 2.0s;     color:rgb(234, 80, 78);     }
+body #devildrey33_Logo > div:nth-child(12), body #devildrey33_LogoCargando > div:nth-child(12) {    animation-delay: 2.2s;     color:rgb(234, 80, 78);     }
+
+@keyframes Ani_LogoCargando {
+    0% {
+        font-size:2.4rem;
+        top:-20vh;
+        left:calc(100% + 1rem);
+        opacity:0;
+        transform:rotateZ(90deg);
+    }
+    25% {
+        top:-1vh;
+        transform:rotateZ(0deg);
+        left:calc(50% - 10rem);
+        opacity:1;
+    }
+    60% {
+        left:calc(50% - 8.9rem);
+        transform:rotateZ(0deg);
+        opacity:1;
+        top:0vh;
+        font-size:2.4rem;
+    }
+    75% {
+        top:75vh;
+        left:calc(0% - 10rem);
+        transform:rotateZ(-130deg);
+        opacity:0;
+        font-size:1.2rem;
+    }
+}
+
+/* Animación que sigue a Ani_LogoCargando pero con las letras verticales del logo */
+@keyframes Ani_ResaltarLetra {
+    0%    { opacity:0; }
+    68%   { opacity:0; }
+    72.5% { opacity:1; }
+    77%   { opacity:0; }
+}
