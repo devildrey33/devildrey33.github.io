@@ -18,6 +18,17 @@ and open the template in the editor.
     align-items:stretch;        
 }
 
+/* Negrita dentro de una entrada normal */
+.devildrey33_Indice > .Entrada b {
+    color:#CCC;
+    transform:0.4s;
+}
+/* negrita dentro del hover de una entrada tiene el máximo de blanco */ 
+.devildrey33_Indice > .Entrada:hover b {    
+    color:#FFF;    
+}
+
+
 .devildrey33_Indice > .Entrada {
     position:relative;
     flex:1 1 800px;
@@ -49,7 +60,7 @@ and open the template in the editor.
     }
     
     .devildrey33_Indice > .Entrada > .Entrada_Contenido > .Entrada_Descripcion {
-        padding: 2rem 2rem 0.75rem 1vw !important;
+        padding: 0.75rem 2rem 0.75rem 1vw !important;
     }    
     
     .devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Imagen > img, .devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Imagen::before { 
@@ -82,12 +93,15 @@ and open the template in the editor.
     border-radius:1rem;
     z-index:9;
     position:relative;
+    transition:0.4s;
+    left:0rem;
 }
 
 .devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Imagen::before {
     border-radius:1rem;
     position:absolute;
     content:'';
+    left:0.2rem;
     width:250px;
     height:200px;
     opacity:1;
@@ -95,6 +109,13 @@ and open the template in the editor.
     z-index:20;
     transition:0.4s;
 }
+
+
+.devildrey33_Indice > .Entrada:hover > .Entrada_Contenido > .Entrada_Imagen > img,
+.devildrey33_Indice > .Entrada:hover > .Entrada_Contenido > .Entrada_Imagen::before {
+    left:1rem;
+}
+
 
 .devildrey33_Indice > .Entrada:hover > .Entrada_Contenido > .Entrada_Imagen::before {
 /*    right:3rem;*/
@@ -133,29 +154,43 @@ and open the template in the editor.
     padding-left:1rem;
 }
 
+ /* Descripción <P> y <table> para las categorias y la fecha) */
+.devildrey33_Indice > .Entrada > .Entrada_Contenido >.Entrada_Descripcion > p, .devildrey33_Indice > .Entrada > .Entrada_Contenido >.Entrada_Descripcion > table {
+    font-size:1rem;
+    font-weight:bold;
+    color:#999;
+    margin-left:0.75rem;
+}
+
 /* Descripción de la entrada */
 .devildrey33_Indice > .Entrada > .Entrada_Contenido >.Entrada_Descripcion > p {    
     position:relative;
     transition:0.4s ease-out;    
     width:calc(100% - 1rem);
-    margin-left:0.75rem;
     margin-right:1.25rem;
-    color:#CCC;
 }
 
 .devildrey33_Indice > .Entrada > .Entrada_Contenido >.Entrada_Descripcion > table {    
     position:relative;
     transition:0.4s ease-out;    
-    margin:0.75rem;    
-    color:#CCC;
 }
 
-.devildrey33_Indice > .Entrada:hover > .Entrada_Contenido > .Entrada_Descripcion > p, .devildrey33_Indice > .Entrada:hover > .Entrada_Contenido > .Entrada_Descripcion > table {    
+.devildrey33_Indice > .Entrada:hover > .Entrada_Contenido > .Entrada_Descripcion > p,
+.devildrey33_Indice > .Entrada:hover > .Entrada_Contenido > .Entrada_Descripcion > table {    
     margin-left:2rem;
     margin-right:0rem;
-    color:#FFF;
+    color:#CCC;    
 }
 
+/* Las celdas de la tabla tienen la alineación fijada arriba (por si alguna celda tiene varias lineas)*/
+.devildrey33_Indice > .Entrada > .Entrada_Contenido > .Entrada_Descripcion > table td {    
+    vertical-align: top;
+}
+
+/* Columna que contiene los datos variables de la tabla (categorias y fecha) tiene un margin left, poque el señor ivan dice que separar los dos puntos con espacio es de analfabeto */
+.devildrey33_Indice > .Entrada > .Entrada_Contenido > .Entrada_Descripcion > table td:nth-child(3) {    
+    padding-left:0.5rem;
+}
 
 /* Marcas */
 .devildrey33_Indice > .Entrada > .Entrada_MarcoIzquierdo::before, 
@@ -188,57 +223,57 @@ and open the template in the editor.
 .devildrey33_Indice > .Entrada > .Entrada_MarcoIzquierdo::before {
     top: 0px;
     left: 0px;
-    border-top: 3px solid rgba(57, 55, 60, 0.3);
-    border-left: 3px solid rgba(57, 55, 60, 0.3);
+    border-top: 1px solid rgba(57, 55, 60, 0.3);
+    border-left: 1px solid rgba(57, 55, 60, 0.3);
 }
 
 .devildrey33_Indice > .Entrada > .Entrada_MarcoIzquierdo::after {
     left: 0px;
     bottom: -1px;
-    border-bottom: 3px solid rgba(57, 55, 60, 0.3);
-    border-left: 3px solid rgba(57, 55, 60, 0.3);
+    border-bottom: 1px solid rgba(57, 55, 60, 0.3);
+    border-left: 1px solid rgba(57, 55, 60, 0.3);
 }
 
 .devildrey33_Indice > .Entrada > .Entrada_MarcoDerecho::before {
     bottom: -1px;
     right: 0px;
-    border-bottom: 3px solid rgba(57, 55, 60, 0.3);
-    border-right: 3px solid rgba(57, 55, 60, 0.3);
+    border-bottom: 1px solid rgba(57, 55, 60, 0.3);
+    border-right: 1px solid rgba(57, 55, 60, 0.3);
 }
 
 .devildrey33_Indice > .Entrada > .Entrada_MarcoDerecho::after {
     top: 0px;
     right: 0px;
-    border-top: 3px solid rgba(57, 55, 60, 0.3);
-    border-right: 3px solid rgba(57, 55, 60, 0.3);
+    border-top: 1px solid rgba(57, 55, 60, 0.3);
+    border-right: 1px solid rgba(57, 55, 60, 0.3);
 }
 
 /* hover para las marcas */
 .devildrey33_Indice > .Entrada:hover > .Entrada_MarcoIzquierdo::before { 
     top:0.5rem;
     left:0.5rem;
-    border-top:3px solid #666;
-    border-left:3px solid #666;
+    border-top:1px solid #666;
+    border-left:1px solid #666;
 }
 .devildrey33_Indice > .Entrada:hover > .Entrada_MarcoIzquierdo::after { 
     bottom:0.5rem;
     left:0.5rem;
-    border-bottom:3px solid #666;
-    border-left:3px solid #666;
+    border-bottom:1px solid #666;
+    border-left:1px solid #666;
 }
 
 .devildrey33_Indice > .Entrada:hover > .Entrada_MarcoDerecho::before { 
     bottom:0.5rem;
     right:0.5rem;
-    border-bottom:3px solid #666;
-    border-right:3px solid #666;
+    border-bottom:1px solid #666;
+    border-right:1px solid #666;
 }
 
 .devildrey33_Indice > .Entrada:hover > .Entrada_MarcoDerecho::after { 
     top:0.5rem;
     right:0.5rem;
-    border-top:3px solid #666;
-    border-right:3px solid #666;
+    border-top:1px solid #666;
+    border-right:1px solid #666;
 }
 
 .devildrey33_Indice > .Entrada:hover > .Entrada_MarcoIzquierdo::before, 

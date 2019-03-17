@@ -26,7 +26,7 @@ var devildrey33_Base = function() {
         
         // s'ha de fer això quan s'acabi de carregar tot el ajax
         
-        setTimeout(function () { document.body.setAttribute("cargando", "false")} , 13000);
+        setTimeout(function () { document.body.setAttribute("cargando", "false")} , 6000);
     };
     
     // Función que crea la barra derecha y la añade al body
@@ -36,17 +36,17 @@ var devildrey33_Base = function() {
         document.body.appendChild(Barra);
         var Logo =  document.createElement("div");
         Logo.setAttribute("id", "devildrey33_Logo");
-        Logo.innerHTML = "<div>D</div>" +
-                         "<div>E</div>" +
-                         "<div>V</div>" +
-                         "<div>I</div>" +
-                         "<div>L</div>" +
-                         "<div>D</div>" +
-                         "<div>R</div>" +
-                         "<div>E</div>" +
-                         "<div>Y</div>" +
-                         "<div>&nbsp;</div>" +
-                         "<div>3</div>" +
+        Logo.innerHTML = "<div>D</div>"         +
+                         "<div>E</div>"         +
+                         "<div>V</div>"         +
+                         "<div>I</div>"         +
+                         "<div>L</div>"         +
+                         "<div>D</div>"         +
+                         "<div>R</div>"         +
+                         "<div>E</div>"         +
+                         "<div>Y</div>"         +
+                         "<div>&nbsp;</div>"    +
+                         "<div>3</div>"         +
                          "<div>3</div>";
         document.body.appendChild(Logo);
         
@@ -247,7 +247,7 @@ var Opciones = {
             "Imagen"        : "/Graficos/250x200_Domino.png"
         },
         {
-            "Nombre"        : "Experimento : CyberParasit",
+            "Nombre"        : "Experimento: CyberParasit",
             "URL"           : "/CyberParasit/",
             "Descripcion"   : "Presentación / animación en 3D que consiste en varios cubos siguiendo el ritmo de una canción.",
             "Categorias"    : "<b>JavaScript</b>, <b>Three.js</b>, <b>JSON</b>, y <b>WebAudio</b>",
@@ -255,7 +255,7 @@ var Opciones = {
             "Imagen"        : "/Graficos/250x200_CyberParasit.png"
         },
         {
-            "Nombre"        : "Experimento : EspectroAudible",
+            "Nombre"        : "Experimento: EspectroAudible",
             "URL"           : "/EspectroAudible/",
             "Descripcion"   : "Un analizador de espectro en 3D.",
             "Categorias"    : "<b>JavaScript</b>, <b>Three.js</b>, y <b>WebAudio</b>.",
@@ -263,7 +263,7 @@ var Opciones = {
             "Imagen"        : "/Graficos/250x200_EspectroAudible.png"
         },
         {   
-            "Nombre"        : "Experimento : Hex Tunnel",
+            "Nombre"        : "Experimento_ Hex Tunnel",
             "URL"           : "/HexTunnel/",
             "Descripcion"   : "Animación de un tunel infinito, compuesto por varios bloques 3D en los que se van mostrando valores hexadecimales aleatórios.",
             "Categorias"    : "<b>JavaScript</b>, y <b>Three.js</b>.",
@@ -271,7 +271,7 @@ var Opciones = {
             "Imagen"        : "/Graficos/250x200_HexTunnel.png"
         },
         {
-            "Nombre"        : "Experimento : Sinusoidal",
+            "Nombre"        : "Experimento: Sinusoidal",
             "URL"           : "/Sinusoidal/",
             "Descripcion"   : "Animación de una onda generada aleatóriamente utilizando un número indeterminado de circulos, cada uno con un diámetro aleatório.",
             "Categorias"    : "<b>JavaScript</b>, y <b>Canvas 2D</b>",
@@ -279,7 +279,7 @@ var Opciones = {
             "Imagen"        : "/Graficos/250x200_Sinusoidal.png"            
         },
         {
-            "Nombre"        : "Experimento : Esfera vertex shader",
+            "Nombre"        : "Experimento: Esfera vertex shader",
             "URL"           : "/EsferaVertexShader/",
             "Descripcion"   : "Ejemplo básico para mover todos los vertices de la esfera utilizando un shadder basado en p5noise",
             "Categorias"    : "<b>JavaScript</b>, y <b>Three.js</b>",

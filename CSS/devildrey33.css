@@ -13,14 +13,17 @@
 
 @import url('/CSS/devildrey33_Indice.css');
 @import url('/CSS/devildrey33_Logo.css');
+/*@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro:700'); /*
+
 
 /* vermell : rgb(234, 80, 78);*/
 
 html {
     font-size: 100%; /* Conversión para que el rem valga 10 pixeles por defecto en la web */
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;    
+/*    font-family: 'Anonymous Pro', monospace;*/
 }
-h1 { font-size:2rem; }
+h1 { font-size:1.5rem; }
 
 /* 2% del ancho para el tamaño de fuente */
 @media screen and (orientation: landscape) and (min-resolution: 1.2dppx) {
