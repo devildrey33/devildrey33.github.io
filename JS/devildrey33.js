@@ -26,7 +26,7 @@ var devildrey33_Base = function() {
         
         // s'ha de fer això quan s'acabi de carregar tot el ajax
         
-        setTimeout(function () { document.body.setAttribute("cargando", "false")} , 6000);
+        setTimeout(function () { document.body.setAttribute("cargando", "false")} , 500);
     };
     
     // Función que crea la barra derecha y la añade al body
@@ -219,7 +219,9 @@ var devildrey33_Base = function() {
                             "</table>"                                                  +
                         "</div>"                                                        +
                         "<div class='Entrada_Imagen'>"                                  +
-                            "<img src='" + Opciones.Entradas[i].Imagen + "' />"         +
+                            "<div>"                                                     +
+                                "<img src='" + Opciones.Entradas[i].Imagen + "' />"     +
+                            "</div>"                                                    +
                         "</div>"                                                        +
                     "</div>"                                                            +
                 "</a>";
@@ -241,7 +243,7 @@ var Opciones = {
         {
             "Nombre"        : "Dominó 3D",
             "URL"           : "/Domino/domino.html",
-            "Descripcion"   : "Juego de dominó en 3D, con las reglas básicas de un 2 contra 2 por parejas, <b>solo para un jugador</b>.",
+            "Descripcion"   : "Juego de dominó en 3D 100% funcional con una dificultad básica (siempre tiran la ficha con mayor valor sumado posible), Se utilizan las reglas básicas de un 2 contra 2 por parejas, <b>solo para un jugador</b>.",
             "Categorias"    : "<b>JavaScript</b>, y <b>Three.js</b>.",
             "Fecha"         : "08/03/2019",
             "Imagen"        : "/Graficos/250x200_Domino.png"
@@ -249,7 +251,7 @@ var Opciones = {
         {
             "Nombre"        : "Experimento: CyberParasit",
             "URL"           : "/CyberParasit/",
-            "Descripcion"   : "Presentación / animación en 3D que consiste en varios cubos siguiendo el ritmo de una canción.",
+            "Descripcion"   : "Presentación / animación en 3D adap`tada al análisis de una canción en concreto para realizar una animación, que consiste en varios cubos siguiendo el ritmo de la música.",
             "Categorias"    : "<b>JavaScript</b>, <b>Three.js</b>, <b>JSON</b>, y <b>WebAudio</b>",
             "Fecha"         : "08/03/2019",
             "Imagen"        : "/Graficos/250x200_CyberParasit.png"
@@ -257,7 +259,7 @@ var Opciones = {
         {
             "Nombre"        : "Experimento: EspectroAudible",
             "URL"           : "/EspectroAudible/",
-            "Descripcion"   : "Un analizador de espectro en 3D.",
+            "Descripcion"   : "Un analizador de espectro/onda en 3d ejecutado en varias canciones de muestra. La parte central representa una FFT (fast fourier transform), y a partir de la FFT y del análisis de la onda hay varias pantallas que puedesq personalizar. <br>Recomendado en chrome PC.",
             "Categorias"    : "<b>JavaScript</b>, <b>Three.js</b>, y <b>WebAudio</b>.",
             "Fecha"         : "08/03/2019",  
             "Imagen"        : "/Graficos/250x200_EspectroAudible.png"
@@ -265,7 +267,7 @@ var Opciones = {
         {   
             "Nombre"        : "Experimento_ Hex Tunnel",
             "URL"           : "/HexTunnel/",
-            "Descripcion"   : "Animación de un tunel infinito, compuesto por varios bloques 3D en los que se van mostrando valores hexadecimales aleatórios.",
+            "Descripcion"   : "Animación de un tunel infinito que está compuesto por varios bloques 3D, dichos bloques muestran valores hexadecimales aleatórios modificando una textura en memória a traves de un canvas 2D para terminar mostrando el resultado en 3D.",
             "Categorias"    : "<b>JavaScript</b>, y <b>Three.js</b>.",
             "Fecha"         : "08/03/2019",
             "Imagen"        : "/Graficos/250x200_HexTunnel.png"
@@ -281,7 +283,7 @@ var Opciones = {
         {
             "Nombre"        : "Experimento: Esfera vertex shader",
             "URL"           : "/EsferaVertexShader/",
-            "Descripcion"   : "Ejemplo básico para mover todos los vertices de la esfera utilizando un shadder basado en p5noise",
+            "Descripcion"   : "Ejemplo básico para empezar a entender los vertex shadders moviendo todos los vertices de una esfera utilizando un algoritmo p5 noise. He utilizado el código GLSL de hughsk para generar el efecto de ruido,.",
             "Categorias"    : "<b>JavaScript</b>, y <b>Three.js</b>",
             "Fecha"         : "08/03/2019",
             "Imagen"        : "/Graficos/250x200_EsferaVShader.png"      
@@ -289,7 +291,7 @@ var Opciones = {
         {
             "Nombre"        : "Adiestramiento de cubos",
             "URL"           : "/AdiestramientoCubos/",
-            "Descripcion"   : "Mi primera animación en 3D utilizando Three.js",
+            "Descripcion"   : "Mi primera animación en 3D utilizando Three.js, Básicamente mi intención fue ver que necesitaria para crear / animar una escena con varios objetos utilizando three.js + javascript",
             "Categorias"    : "<b>JavaScript</b>, y <b>Three.js</b>",
             "Fecha"         : "08/03/2019",
             "Imagen"        : "/Graficos/250x200_Adiestramiento.png"            
