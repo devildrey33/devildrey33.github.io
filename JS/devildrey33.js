@@ -22,11 +22,11 @@ var devildrey33_Base = function() {
         this.GenerarHTMLBase();
         
         document.getElementById("Cuerpo").setAttribute("visible", "true");
-//        document.getElementById("devildrey33_Logo").setAttribute("cargando", "false");
+//        document.getElementById("devildrey33_Logo").setAttribute("data-cargando", "false");
         
         // s'ha de fer això quan s'acabi de carregar tot el ajax
         
-        setTimeout(function () { document.body.setAttribute("cargando", "false")} , 500);
+        setTimeout(function () { document.body.setAttribute("data-cargando", "false"); } , 16000);
     };
     
     // Función que crea la barra derecha y la añade al body
@@ -55,7 +55,7 @@ var devildrey33_Base = function() {
         LogoC.innerHTML = Logo.innerHTML;
         document.body.appendChild(LogoC);
 
-        document.body.setAttribute("cargando", "true");
+        document.body.setAttribute("data-cargando", "true");
         
     };
     
@@ -242,7 +242,7 @@ var Opciones = {
     "Entradas" : [
         {
             "Nombre"        : "Dominó 3D",
-            "URL"           : "/Domino/domino.html",
+            "URL"           : "/Domino/",
             "Descripcion"   : "Juego de dominó en 3D 100% funcional con una dificultad básica (siempre tiran la ficha con mayor valor sumado posible), Se utilizan las reglas básicas de un 2 contra 2 por parejas, <b>solo para un jugador</b>.",
             "Categorias"    : "<b>JavaScript</b>, y <b>Three.js</b>.",
             "Fecha"         : "08/03/2019",
@@ -259,7 +259,7 @@ var Opciones = {
         {
             "Nombre"        : "Experimento: EspectroAudible",
             "URL"           : "/EspectroAudible/",
-            "Descripcion"   : "Un analizador de espectro/onda en 3d ejecutado en varias canciones de muestra. La parte central representa una FFT (fast fourier transform), y a partir de la FFT y del análisis de la onda hay varias pantallas que puedesq personalizar. <br>Recomendado en chrome PC.",
+            "Descripcion"   : "Un analizador de espectro/onda en 3d ejecutado en varias canciones de muestra. La parte central representa una FFT (fast fourier transform), y a partir de la FFT y del análisis de la onda hay varias pantallas que puedesq personalizar. <br>Navegador recomendado Chrome en PC.",
             "Categorias"    : "<b>JavaScript</b>, <b>Three.js</b>, y <b>WebAudio</b>.",
             "Fecha"         : "08/03/2019",  
             "Imagen"        : "/Graficos/250x200_EspectroAudible.png"

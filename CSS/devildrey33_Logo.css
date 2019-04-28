@@ -1,19 +1,18 @@
 /* 
-
     Evolución logo cargando :
-    - La primera versión de devildrey33 consistia  en utilizar las letras de la barra izquierda con una animación del font-spacing [20-09-2015] (en ese momento ya le costaba al navegador y a fecha de hoy sigue siendo un poco tosco en la DES animación, sobretodo en la rotación y alineación al volver a la barra izquierda).
+    - La primera versión de devildrey33 consistia en utilizar las letras de la barra izquierda con una animación del font-spacing [20-09-2015] (en ese momento ya le costaba al navegador y a fecha de hoy sigue siendo un poco tosco en la DES animación, sobretodo en la rotación y alineación al volver a la barra izquierda).
         - El problema es que las letras del logo debem estar dentro de una etiqueta para que todas las letras se alineen correctamente (ya que la etiqueta por defecto está rotada -90deg) en la barra izquierda para mostrar el logo.
-- Mi ilusión era utilizar unicamente esas etiquetas para realizar la animación, y que luego volviesen a su posición en la barra izquierda, cosa que ahora mismo considero practicamente imposible (si lo quiero responsive)
+    - Mi ilusión era utilizar unicamente esas etiquetas para realizar la animación, y que luego volviesen a su posición en la barra izquierda, cosa que ahora mismo considero practicamente imposible (si lo quiero responsive)
         - Al hacer la animación, la etiqueta que contiene las letras tiene que abandonar la barra izquierda y moverse al centro de la pantalla ademas de ser ampliada, y esto hace que la DES animación quede fatal (al invertir la posición y rotación de la etiquera raíz de las letras del logo))
         - He intentado hacer-lo sin una etiqueta raíz para las letras... y aunque es mejor para la DES animación... el problema viene de que no soy capaz de alinear las letras del logo verticalmente en distintas resoluciones, sobretodo da problemas la 'I' aunque otras letras tambien presentan ciertas discrepancias'... 
             - Incluso cree elementos after a cada objeto que representa a una letra, para poder especificar la X y la Y del objeto sin que se viera afectado por la rotación, ya que dicha rotación se efectuaba en el elemento after)
                 - De esta forma podia mover el elemento de la letra normalmente con left y bottom. Ya que si modificas la propiedad left de un objeto rotado 90 grados, realmente estás modificando rl yop o el botom.. por no hablar de paddings y margins
 
-        - Total que he creado dos rtiquetas con las letras del logo, una en la barra izquierda (como siempre), y otra en la animación de carga, y de esta forma puedo animar las letras del logo de la barra izquierda con una segunda animación sincronizada al ocultarse cada letra.
+        - Total que he creado dos etiquetas con las letras del logo, una en la barra izquierda (como siempre), y otra en la animación de carga, y de esta forma puedo animar las letras del logo de la barra izquierda con una segunda animación sincronizada al ocultarse cada letra.
         - Conclusión :
             - Me hubiera gustado algo 100% CSS con el mínimo de maquetación posible... pero supongo que no soy tan crack..., 
             - y hacer un canvas... es pasarse para algo que el usuario verá un par de veces como mucho,
-            - asi que me el resultado actual con CSS me parece mucho mejor de lo que ya tenia, y se sigue activando / desactivando cómodamente desde body[cargando="true"]
+            - asi que me el resultado actual con CSS me parece mucho mejor de lo que ya tenia, y se sigue activando / desactivando cómodamente desde body[data-cargando="true"]
 */
 
 
@@ -60,7 +59,7 @@ body #devildrey33_Logo {
 }
 
 
-body[cargando="true"] #devildrey33_Logo {
+body[data-cargando="true"] #devildrey33_Logo {
     opacity:1.0;
 }
 /* Letras del logo vertical */
@@ -71,7 +70,7 @@ body #devildrey33_Logo > div {
     transition:0.4s;
 }
 
-body[cargando="true"] #devildrey33_Logo > div {    
+body[data-cargando="true"] #devildrey33_Logo > div {    
     opacity:0.0;
     animation:Ani_ResaltarLetra 6s ease-in-out 0s infinite;    
 }
@@ -90,7 +89,7 @@ body #devildrey33_LogoCargando {
 }
 
 /* Logo para la animación del loading */
-body[cargando="true"] #devildrey33_LogoCargando {
+body[data-cargando="true"] #devildrey33_LogoCargando {
     width:calc(100vw - 1px);
     height:calc(100vh - 1px);
     z-index:100;
@@ -99,7 +98,7 @@ body[cargando="true"] #devildrey33_LogoCargando {
 
 /* 2% del alto para el tamaño de fuente */
 /*@media screen and (orientation: portrait)  {
-    body[cargando="true"] #devildrey33_Logo > div {
+    body[data-cargando="true"] #devildrey33_Logo > div {
         animation:Ani_LogoCargandoPortrait 6s ease-in-out 0s infinite;    
     }
 }
@@ -114,7 +113,7 @@ body #devildrey33_LogoCargando > div {
     padding-top:50vh;
 }
 
-body[cargando="true"] #devildrey33_LogoCargando > div {
+body[data-cargando="true"] #devildrey33_LogoCargando > div {
     animation:Ani_LogoCargando 6s ease-in-out 0s infinite;    
 }
 
@@ -140,7 +139,7 @@ body #devildrey33_Logo > div:nth-child(12), body #devildrey33_LogoCargando > div
         font-size:2.4rem;
         top:-20vh;
         left:calc(100% + 1rem);
-        opacity:0;
+        opacity:0.1;
         transform:rotateZ(90deg);
     }
     25% {
@@ -161,7 +160,7 @@ body #devildrey33_Logo > div:nth-child(12), body #devildrey33_LogoCargando > div
         top:60vh;
         left:calc(0% - 10rem);
         transform:rotateZ(-90deg);
-        opacity:0;
+        opacity:0.1;
         font-size:1.2rem;
     }
 }
@@ -171,5 +170,5 @@ body #devildrey33_Logo > div:nth-child(12), body #devildrey33_LogoCargando > div
     0%    { opacity:0; }
     68%   { opacity:0; }
     72.5% { opacity:1; }
-    77%   { opacity:0; }
+    76%   { opacity:0.1; }
 }

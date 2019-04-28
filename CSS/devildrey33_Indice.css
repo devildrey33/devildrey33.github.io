@@ -8,18 +8,16 @@ and open the template in the editor.
     Author     : devildrey33
 */
 
-/* 
- TODO : acabar d'ajustar la vista portrait (la imatge es queda maça avall.. al fer hover es nota...)
-*/
-
 
 /* INDICE */
 .devildrey33_Indice {
-    display:flex;
+/*    display:flex;
     flex-wrap:wrap;
     flex-direction:row;
-    justify-content:flex-start;
     align-items:stretch;        
+    justify-content:flex-start;*/
+    display:grid;
+    grid-template-columns:100%;
 }
 
 /* Negrita dentro de una entrada normal */
@@ -62,11 +60,13 @@ and open the template in the editor.
     }
     
     .devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Imagen {
-        max-width:none !important;
+        max-width:none !important;  /* En modo portrait no puede haber max-width para que pueda ocupar todo el ancho */
+        margin-bottom:0.5rem;       /* En modo portrait es necesario un margen inferior para que la imagen no se pegue a las marcas de la entrada */
     }
     
     .devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Imagen > div {
         left:calc(50% - 125px) !important;
+        top:-0.5rem !important;
         transform:none !important;
     }
     
@@ -78,15 +78,22 @@ and open the template in the editor.
 
 /* Vista apaisado */
 @media (orientation:landscape) {
+    .devildrey33_Indice > .Entrada {
+        flex:1 1 calc(45% - 2rem);
+    }
+    
     .devildrey33_Indice > .Entrada:hover  > .Entrada_Contenido > .Entrada_Imagen > div {
         left:47%;
     }
 }
 
 /* Vista escritorio con mas de 1700 pixeles de ancho */
-@media (orientation:landscape) and (max-width: 1700px) and (max-resolution: 1dppx) {
-    .devildrey33_Indice > .Entrada {
+@media (orientation:landscape) and (min-width: 1500px) and (max-resolution: 1dppx) {
+/*    .devildrey33_Indice > .Entrada {
         max-width:50%
+    }*/
+    .devildrey33_Indice {
+        grid-template-columns:50% 50%;
     }
 }
 
@@ -94,12 +101,9 @@ and open the template in the editor.
 /* Imagen de la entrada */
 .devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Imagen {
     flex: 1 1 25%;
-/*    padding:2rem 2rem 2rem 0.2rem; */
     position:relative;
     transition:0.4s ease-out;
     max-width:250px; 
-/*    top:calc(50% - 100px);*/    
-/*    transform: translate(0%, -50%);    */
 }
 
 .devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Imagen > div {
@@ -112,6 +116,7 @@ and open the template in the editor.
     transition:0.4s;
 }
 
+/* Objeto que cubre la imagen con un fondo negro translucido */
 .devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Imagen > div::before {
     border-radius:1rem;
     position:absolute;
@@ -128,6 +133,7 @@ and open the template in the editor.
     opacity:0;
 }
 
+/* Imagen de una entrada */
 .devildrey33_Indice > .Entrada  > .Entrada_Contenido > .Entrada_Imagen > div > img {
     border-radius:1rem;
     z-index:9;
@@ -139,9 +145,6 @@ and open the template in the editor.
 .devildrey33_Indice > .Entrada > .Entrada_Contenido > .Entrada_Descripcion {
     position:relative;
     flex: 1 1 75%;
-/*    display:inline-table;*/
-/*    height:200px;
-    width:calc((100% - 4rem) - 300px);*/
     padding:2rem 1rem 2rem 1vw;
     transition:0.4s ease-in-out;
     color:#FFFFFF;
@@ -178,6 +181,7 @@ and open the template in the editor.
     margin-right:1.25rem;
 }
 
+/* Tabla con las categorias y la fecha */
 .devildrey33_Indice > .Entrada > .Entrada_Contenido >.Entrada_Descripcion > table {    
     position:relative;
     transition:0.4s ease-out;    
@@ -212,7 +216,7 @@ and open the template in the editor.
     height: 1.5rem;
 }
 
-#Cuerpo> .devildrey33_Indice > .Entrada > .Entrada_MarcoIzquierdo, .devildrey33_Indice > .Entrada > .Entrada_MarcoDerecho {   
+#Cuerpo > .devildrey33_Indice > .Entrada > .Entrada_MarcoIzquierdo, .devildrey33_Indice > .Entrada > .Entrada_MarcoDerecho {   
     position: absolute;
     display:inline-block;
     top: 0px;
@@ -231,29 +235,29 @@ and open the template in the editor.
 .devildrey33_Indice > .Entrada > .Entrada_MarcoIzquierdo::before {
     top: 0px;
     left: 0px;
-    border-top: 2px solid rgba(57, 55, 60, 0.3);
-    border-left: 2px solid rgba(57, 55, 60, 0.3);
+    border-top: 2px solid #292929;
+    border-left: 2px solid #292929;
 }
 
 .devildrey33_Indice > .Entrada > .Entrada_MarcoIzquierdo::after {
     left: 0px;
     bottom: -1px;
-    border-bottom: 2px solid rgba(57, 55, 60, 0.3);
-    border-left: 2px solid rgba(57, 55, 60, 0.3);
+    border-bottom: 2px solid #292929;
+    border-left: 2px solid #292929;
 }
 
 .devildrey33_Indice > .Entrada > .Entrada_MarcoDerecho::before {
     bottom: -1px;
     right: 0px;
-    border-bottom: 2px solid rgba(57, 55, 60, 0.3);
-    border-right: 2px solid rgba(57, 55, 60, 0.3);
+    border-bottom: 2px solid #292929;
+    border-right: 2px solid #292929;
 }
 
 .devildrey33_Indice > .Entrada > .Entrada_MarcoDerecho::after {
     top: 0px;
     right: 0px;
-    border-top: 2px solid rgba(57, 55, 60, 0.3);
-    border-right: 2px solid rgba(57, 55, 60, 0.3);
+    border-top: 2px solid #292929;
+    border-right: 2px solid #292929;
 }
 
 /* hover para las marcas */

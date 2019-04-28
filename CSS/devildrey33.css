@@ -55,7 +55,7 @@ body::after {
     transition: 0.4s ease-out;
 }
 
-body[cargando="true"]::after {
+body[data-cargando="true"]::after {
     opacity:0.925;
     z-index:99;
 }
