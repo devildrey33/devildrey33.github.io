@@ -24,9 +24,8 @@ var devildrey33_Base = function() {
         document.getElementById("Cuerpo").setAttribute("visible", "true");
 //        document.getElementById("devildrey33_Logo").setAttribute("data-cargando", "false");
         
-        // s'ha de fer això quan s'acabi de carregar tot el ajax
-        
-        setTimeout(function () { document.body.setAttribute("data-cargando", "false"); } , 16000);
+        // s'ha de fer això quan s'acabi de carregar tot el ajax       
+//        setTimeout(function () { document.body.setAttribute("data-cargando", "false"); } , 1000);
     };
     
     // Función que crea la barra derecha y la añade al body
@@ -55,7 +54,7 @@ var devildrey33_Base = function() {
         LogoC.innerHTML = Logo.innerHTML;
         document.body.appendChild(LogoC);
 
-        document.body.setAttribute("data-cargando", "true");
+        document.body.setAttribute("data-cargando", "false"); // Animación de carga asignada a false
         
     };
     
@@ -251,7 +250,7 @@ var Opciones = {
         {
             "Nombre"        : "Experimento: CyberParasit",
             "URL"           : "/CyberParasit/",
-            "Descripcion"   : "Presentación / animación en 3D adap`tada al análisis de una canción en concreto para realizar una animación, que consiste en varios cubos siguiendo el ritmo de la música.",
+            "Descripcion"   : "Presentación / animación en 3D adaptada al análisis de una canción en concreto para realizar una animación, que consiste en varios cubos siguiendo el ritmo de la música.",
             "Categorias"    : "<b>JavaScript</b>, <b>Three.js</b>, <b>JSON</b>, y <b>WebAudio</b>",
             "Fecha"         : "08/03/2019",
             "Imagen"        : "/Graficos/250x200_CyberParasit.png"
@@ -259,7 +258,7 @@ var Opciones = {
         {
             "Nombre"        : "Experimento: EspectroAudible",
             "URL"           : "/EspectroAudible/",
-            "Descripcion"   : "Un analizador de espectro/onda en 3d ejecutado en varias canciones de muestra. La parte central representa una FFT (fast fourier transform), y a partir de la FFT y del análisis de la onda hay varias pantallas que puedesq personalizar. <br>Navegador recomendado Chrome en PC.",
+            "Descripcion"   : "Un analizador de espectro / onda en 3d ejecutado en varias canciones de muestra. La parte central representa una FFT (fast fourier transform), y a partir de la FFT y del análisis de la onda hay varias pantallas que puedesq personalizar.",
             "Categorias"    : "<b>JavaScript</b>, <b>Three.js</b>, y <b>WebAudio</b>.",
             "Fecha"         : "08/03/2019",  
             "Imagen"        : "/Graficos/250x200_EspectroAudible.png"
@@ -283,7 +282,7 @@ var Opciones = {
         {
             "Nombre"        : "Experimento: Esfera vertex shader",
             "URL"           : "/EsferaVertexShader/",
-            "Descripcion"   : "Ejemplo básico para empezar a entender los vertex shadders moviendo todos los vertices de una esfera utilizando un algoritmo p5 noise. He utilizado el código GLSL de hughsk para generar el efecto de ruido,.",
+            "Descripcion"   : "Ejemplo básico para empezar a entender los vertex shadders moviendo todos los vertices de una esfera utilizando un algoritmo p5 noise. He utilizado el código GLSL de hughsk para generar el efecto de ruido.",
             "Categorias"    : "<b>JavaScript</b>, y <b>Three.js</b>",
             "Fecha"         : "08/03/2019",
             "Imagen"        : "/Graficos/250x200_EsferaVShader.png"      
@@ -291,7 +290,7 @@ var Opciones = {
         {
             "Nombre"        : "Adiestramiento de cubos",
             "URL"           : "/AdiestramientoCubos/",
-            "Descripcion"   : "Mi primera animación en 3D utilizando Three.js, Básicamente mi intención fue ver que necesitaria para crear / animar una escena con varios objetos utilizando three.js + javascript",
+            "Descripcion"   : "Mi primera animación en 3D utilizando Three.js, Básicamente mi intención fue ver que necesitaria para crear / animar una escena con varios objetos utilizando three.js + javascript.",
             "Categorias"    : "<b>JavaScript</b>, y <b>Three.js</b>",
             "Fecha"         : "08/03/2019",
             "Imagen"        : "/Graficos/250x200_Adiestramiento.png"            
