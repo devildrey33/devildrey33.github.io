@@ -240,6 +240,14 @@ var Opciones = {
     // Entradas del indice 
     "Entradas" : [
         {
+            "Nombre"        : "RAVE",
+            "URL"           : "/RAVE/",
+            "Descripcion"   : "<b>R</b>eproductor de <b>A</b>udio y <b>V</b>ideo <b>E</b>xtendido basado en la LibVLC, con una base de datos integrada para poder crear listas de canciones fácilmente. <br />Incluye multiples opciones interesantes como por ejemplo apagar el equipo al terminar la lista.",
+            "Categorias"    : "<b>C++</b>, y <b>MySQL</b>.",
+            "Fecha"         : "08/03/2019",
+            "Imagen"        : "/Graficos/250x200_RAVE.png"
+        },
+        {
             "Nombre"        : "Dominó 3D",
             "URL"           : "/Domino/",
             "Descripcion"   : "Juego de dominó en 3D 100% funcional con una dificultad básica (siempre tiran la ficha con mayor valor sumado posible), Se utilizan las reglas básicas de un 2 contra 2 por parejas, <b>solo para un jugador</b>.",
