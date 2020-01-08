@@ -252,7 +252,7 @@ var Opciones = {
             "URL"           : "/Domino/",
             "Descripcion"   : "Juego de dominó en 3D 100% funcional con una dificultad básica (siempre tiran la ficha con mayor valor sumado posible), Se utilizan las reglas básicas de un 2 contra 2 por parejas, <b>solo para un jugador</b>.",
             "Categorias"    : "<b>JavaScript</b>, y <b>Three.js</b>.",
-            "Fecha"         : "08/03/2019",
+            "Fecha"         : "16/01/2019",
             "Imagen"        : "/Graficos/250x200_Domino.png"
         },
         {
@@ -260,47 +260,63 @@ var Opciones = {
             "URL"           : "/CyberParasit/",
             "Descripcion"   : "Presentación / animación en 3D adaptada al análisis de una canción en concreto para realizar una animación, que consiste en varios cubos siguiendo el ritmo de la música.",
             "Categorias"    : "<b>JavaScript</b>, <b>Three.js</b>, <b>JSON</b>, y <b>WebAudio</b>",
-            "Fecha"         : "08/03/2019",
+            "Fecha"         : "30/08/2017",
             "Imagen"        : "/Graficos/250x200_CyberParasit.png"
+        },
+        {   
+            "Nombre"        : "Experimento: Hex Tunnel",
+            "URL"           : "/HexTunnel/",
+            "Descripcion"   : "Animación de un tunel infinito que está compuesto por varios bloques 3D, dichos bloques muestran valores hexadecimales aleatórios modificando una textura en memória a traves de un canvas 2D para terminar mostrando el resultado en 3D.",
+            "Categorias"    : "<b>JavaScript</b>, y <b>Three.js</b>.",
+            "Fecha"         : "15/05/2017",
+            "Imagen"        : "/Graficos/250x200_HexTunnel.png"
         },
         {
             "Nombre"        : "Experimento: EspectroAudible",
             "URL"           : "/EspectroAudible/",
             "Descripcion"   : "Un analizador de espectro / onda en 3d ejecutado en varias canciones de muestra. La parte central representa una FFT (fast fourier transform), y a partir de la FFT y del análisis de la onda hay varias pantallas que puedesq personalizar.",
             "Categorias"    : "<b>JavaScript</b>, <b>Three.js</b>, y <b>WebAudio</b>.",
-            "Fecha"         : "08/03/2019",  
+            "Fecha"         : "23/02/2017",  
             "Imagen"        : "/Graficos/250x200_EspectroAudible.png"
         },
-        {   
-            "Nombre"        : "Experimento_ Hex Tunnel",
-            "URL"           : "/HexTunnel/",
-            "Descripcion"   : "Animación de un tunel infinito que está compuesto por varios bloques 3D, dichos bloques muestran valores hexadecimales aleatórios modificando una textura en memória a traves de un canvas 2D para terminar mostrando el resultado en 3D.",
-            "Categorias"    : "<b>JavaScript</b>, y <b>Three.js</b>.",
-            "Fecha"         : "08/03/2019",
-            "Imagen"        : "/Graficos/250x200_HexTunnel.png"
-        },
         {
-            "Nombre"        : "Experimento: Sinusoidal",
-            "URL"           : "/Sinusoidal/",
-            "Descripcion"   : "Animación de una onda generada aleatóriamente utilizando un número indeterminado de circulos, cada uno con un diámetro aleatório.",
-            "Categorias"    : "<b>JavaScript</b>, y <b>Canvas 2D</b>",
-            "Fecha"         : "08/03/2019",
-            "Imagen"        : "/Graficos/250x200_Sinusoidal.png"            
+            "Nombre"        : "Experimento: MultiCubo",
+            "URL"           : "/MultiCubo/",
+            "Descripcion"   : "Experimento para probar las rotaciones con varios objetos a la vez",
+            "Categorias"    : "<b>JavaScript</b>, y <b>Three.js</b>",
+            "Fecha"         : "26/10/2016",
+            "Imagen"        : "/Graficos/250x200_MultiCubo.png"      
         },
         {
             "Nombre"        : "Experimento: Esfera vertex shader",
             "URL"           : "/EsferaVertexShader/",
             "Descripcion"   : "Ejemplo básico para empezar a entender los vertex shadders moviendo todos los vertices de una esfera utilizando un algoritmo p5 noise. He utilizado el código GLSL de hughsk para generar el efecto de ruido.",
             "Categorias"    : "<b>JavaScript</b>, y <b>Three.js</b>",
-            "Fecha"         : "08/03/2019",
+            "Fecha"         : "07/10/2016",
             "Imagen"        : "/Graficos/250x200_EsferaVShader.png"      
+        },
+        {
+            "Nombre"        : "Experimento: Sinusoidal",
+            "URL"           : "/Sinusoidal/",
+            "Descripcion"   : "Animación de una onda generada aleatóriamente utilizando un número indeterminado de circulos, cada uno con un diámetro aleatório.",
+            "Categorias"    : "<b>JavaScript</b>, y <b>Canvas 2D</b>",
+            "Fecha"         : "07/09/2016",
+            "Imagen"        : "/Graficos/250x200_Sinusoidal.png"            
+        },
+        {   
+            "Nombre"        : "Experimento: Worm Hole",
+            "URL"           : "/WormHole/",
+            "Descripcion"   : "Animación de un agujero de gusano. Consiste en dos cilindros translucidos cada uno con su textura rotando sobre su eje z",
+            "Categorias"    : "<b>JavaScript</b>, y <b>Three.js</b>.",
+            "Fecha"         : "06/08/2016",
+            "Imagen"        : "/Graficos/250x200_WormHole.png"
         },
         {
             "Nombre"        : "Adiestramiento de cubos",
             "URL"           : "/AdiestramientoCubos/",
             "Descripcion"   : "Mi primera animación en 3D utilizando Three.js, Básicamente mi intención fue ver que necesitaria para crear / animar una escena con varios objetos utilizando three.js + javascript.",
             "Categorias"    : "<b>JavaScript</b>, y <b>Three.js</b>",
-            "Fecha"         : "08/03/2019",
+            "Fecha"         : "03/08/2016",
             "Imagen"        : "/Graficos/250x200_Adiestramiento.png"            
         }
 /*        {
