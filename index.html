@@ -9,41 +9,39 @@
         <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
         <title>devildrey33</title>
         <!-- Estilos CSS para el objeto canvas -->
-        <link rel='stylesheet' href='/CSS/devildrey33.css' />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- JQUERY -->
-        <script src="/JS/devildrey33.js"></script>                                                <!-- Script BASE -->
-        <script>window.addEventListener('load', function() { Base.GenerarIndice(); });
-        </script>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Karla');
+
+            body {
+                background-color:#29272C;
+            }
+
+            h1 {
+                color       :#FFF;
+                font-family : 'Karla', sans-serif;
+                text-align  : center;
+                margin-top  : 40vh;
+                position: relative;
+                z-index:100;
+            }
+
+            a {
+                color:rgb(234,80,78);
+            }
+
+            #Logo {
+                position:fixed;
+                width:40vw;
+                top:0vh;
+                height: 100vh;
+                left:30vw;
+                z-index:0;
+            }
+        </style>
     </head>
-    <body data-cargando="true">
-        <div id="Cuerpo">
-<!--            <div class="devildrey33_Indice">
-                <a class='Entrada' href="/Domino/domino.html">
-                    <div class='Entrada_MarcoIzquierdo'></div>
-                    <div class='Entrada_MarcoDerecho'></div>
-                    <div class="Entrada_Contenido">
-                        <div class="Entrada_Descripcion">
-                            <h1>Dominó 3D</h1>
-                            <p>Juego de dominó en 3D, con las reglas básicas de un 2 contra 2 por parejas, <b>solo para un jugador</b>.</p>                    
-                            <table>
-                                <tr>
-                                    <td>Categorías</td>
-                                    <td>:</td>
-                                    <td><b>JavaScript</b>, y <b>Three.js</b>.</td>
-                                </tr>
-                                <tr>
-                                    <td>Fecha</td>
-                                    <td>:</td>
-                                    <td><b>08/03/2019</b></td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="Entrada_Imagen">
-                            <img src='/Graficos/250x200_Domino.png' />
-                        </div>
-                    </div>
-                </a>                
-            </div> -->
-        </div>
+    <body>
+        <img id="Logo" src='Graficos/Logo.svg#Oscuro' />
+
+        <h1>Movido a : <a href="https://devildrey33.es">https://devildrey33.es</a>.</h1>
     </body>
 </html>
